@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Presente SIU al Toque",
-  "version": "2.3.1",
+  "name": "Asistencia SIU al Toque",
+  "version": "3.5.1",
   "description": "Marcado automático de asistencia",
   "permissions": [
     "storage",
@@ -29,7 +29,7 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "presente-siu-altoque@unahur.edu.ar",
+      "id": "asistencia-siu-altoque@unahur.edu.ar",
       "data_collection_permissions": {
         "required": ["none"]
       }
