@@ -1,5 +1,7 @@
 /* ===== POPUP STYLES (NUEVO) ===== */
-
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -18,11 +20,12 @@ h3 {
 
 /* inputs */
 input {
-  width: 100%;
+  width: 98%;
   margin-bottom: 6px;
   padding: 6px;
   border-radius: 6px;
   border: none;
+  box-sizing: border-box; /* 🔥 CLAVE */
 }
 
 /* botones */
