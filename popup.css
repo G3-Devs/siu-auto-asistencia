@@ -46,3 +46,8 @@ button {
   margin-top: 10px;
   font-size: 13px;
 }
+
+.btn-clear {
+  background: #d32f2f;
+  color: white;
+}

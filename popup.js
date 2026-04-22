@@ -1,4 +1,90 @@
 // =========================
+// [NUEVO] STORAGE KEYS
+// =========================
+const STORAGE_KEY = "formData";
+const RESULT_KEY = "formResult"; // [NUEVO]
+// =========================
+// [NUEVO] RESTAURAR DATOS
+// =========================
+
+document.addEventListener("DOMContentLoaded", () => {
+  chrome.storage.local.get([STORAGE_KEY], (res) => {
+    if (!res[STORAGE_KEY]) return;
+
+    const data = res[STORAGE_KEY];
+
+    document.getElementById("descripcion").value = data.descripcion || "";
+    document.getElementById("inicio").value = data.inicio || "";
+    document.getElementById("fin").value = data.fin || "";
+  });
+  // =========================
+  // [NUEVO] RESTAURAR RESULTADO
+  // =========================
+
+  chrome.storage.local.get([RESULT_KEY], (res) => {
+    if (!res[RESULT_KEY]) return;
+
+    const data = res[RESULT_KEY];
+
+    document.getElementById("resultado").innerHTML = `
+      <p style="color:#00c853;"><b>Ultimo formulario generado</b></p>
+
+      <p><b>Link para alumnos:</b></p>
+      <input value="${data.formUrl}" readonly style="width:100%" />
+
+      <button id="copiarBtn" class="btn-main" style="margin-top:5px;">
+        Copiar nuevamente
+      </button>
+
+      <p style="margin-top:10px;"><b>Abrir formulario:</b><br>
+        <a href="${data.formUrl}" target="_blank">Abrir</a>
+      </p>
+
+      <p><b>Ver respuestas:</b><br>
+        <a href="${data.sheetUrl}" target="_blank">Abrir</a>
+      </p>
+    `;
+
+    document.getElementById("copiarBtn").addEventListener("click", () => {
+      navigator.clipboard.writeText(data.formUrl);
+    });
+  });
+});
+
+// =========================
+// [NUEVO] AUTOGUARDADO
+// =========================
+
+function guardarDatos() {
+  const data = {
+    descripcion: document.getElementById("descripcion").value,
+    inicio: document.getElementById("inicio").value,
+    fin: document.getElementById("fin").value
+  };
+
+  chrome.storage.local.remove([STORAGE_KEY, RESULT_KEY]);
+}
+
+// listeners
+["descripcion", "inicio", "fin"].forEach(id => {
+  document.getElementById(id).addEventListener("input", guardarDatos);
+});
+
+// =========================
+// [NUEVO] LIMPIAR FORM
+// =========================
+
+document.getElementById("limpiarForm").addEventListener("click", () => {
+  document.getElementById("descripcion").value = "";
+  document.getElementById("inicio").value = "";
+  document.getElementById("fin").value = "";
+
+  chrome.storage.local.remove(STORAGE_KEY);
+
+  document.getElementById("resultado").innerHTML = "";
+});
+
+// =========================
 // BOTÓN PARA INYECTAR PANEL SIU
 // =========================
 
@@ -66,7 +152,10 @@ document.getElementById("crearForm").addEventListener("click", async () => {
     });
 
     const data = await res.json();
-
+    // [NUEVO] guardar resultado
+    chrome.storage.local.set({
+      [RESULT_KEY]: data
+    });
     // copiar automáticamente
     copiarTexto(data.formUrl);
 

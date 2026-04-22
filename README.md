@@ -14,9 +14,11 @@ Pensada para agilizar el trabajo docente y administrativo, eliminando tareas man
 
 ## ✨ Funcionalidades
 
-- ✅ Panel flotante integrado en la página (no popup)
+- ✅ Panel flotante multifunción (Generación de formulario y Carga de Asistencia por DNI)
 - ✅ Activación desde el ícono de la extensión
-- ✅ Pegado directo desde Excel o texto plano
+- ✅ Función de generación automática de formulario de Asistencia con fecha/hora inicio y fecha/hora fin
+- ✅ Copiado automático del link al formulario para compartir con estudiantes
+- ✅ Pegado directo desde Excel o texto plano en panel de carga de Asistencia
 - ✅ Limpieza automática de formato (espacios, puntos, etc.)
 - ✅ Detección y conteo de DNIs en tiempo real
 - ✅ Marcado automático de asistencia
@@ -29,8 +31,16 @@ Pensada para agilizar el trabajo docente y administrativo, eliminando tareas man
 ---
 
 ## 🖼️ Vista previa
-
-![Vista de la extensión](./screenshot.PNG)
+### Vista de la extensión Carga de asistencias:
+![Vista de la extensión 1.1](./img/screenshot.PNG)
+### Vista de la extensión inicial:
+![Vista de la extensión 1](./img/Screenshot_pop1.PNG)
+### Vista de la extensión generando formulario:
+![Vista de la extensión 1](./img/Screenshot_pop2.PNG)
+### Vista de la extensión con formulario generado:
+![Vista de la extensión 1](./img/Screenshot_pop3.PNG)
+### Vista de la extensión con Ultimo link generado:
+![Vista de la extensión 1](./img/Screenshot_pop4.PNG)
 
 > El panel aparece flotante en la esquina superior derecha y permite gestionar la asistencia de forma rápida.
 
@@ -47,6 +57,8 @@ siu-auto-asistencia/
 ├── popup.js
 ├── popup.html 
 ├── styles.css
+├── popup.js
+├── img/
 └── icons/
 
 ```
@@ -90,8 +102,12 @@ siu-auto-asistencia/
 1. Abrir SIU Guaraní en la pantalla de asistencia
 2. Hacer clic en el ícono de la extensión
 3. Se abrirá el panel flotante
+4. Para cargar asistencia con lista de DNI, pulsar botón Carga asistenia.
 4. Pegar la lista de DNIs
 5. Presionar **"Marcar asistencia"**
+6. Si se desea generar formulario para pasar asistencia, se completa Nombre del formulario, y la fecha/hora que estará abierto el formmulario y se pulsa en **Generar Formulario** (la primera vez se aceptan permisos)
+7. Una vez generado el formulario, se copia el link automáticamente al portapapeles, y permite volver a copiarlo, abrir el formulario y acceder a ver las respuestas
+8. Tanto el formulario como la planilla de respuestas, quedan alojadas en el Drive del docente
 
 ---
 
@@ -123,6 +139,7 @@ Se acepta solo formatos número sin puntos ni comas.
 - Solo interactúa con los alumnos presentes en la vista actual (incluye scroll automático)
 - El rendimiento puede variar según la cantidad de alumnos cargados
 - Se recomienda validar los resultados antes de confirmar la operación
+- Para utilizar la función de generar formulario, se deben otorgar permisos a la cuenta.
 
 ---
 
@@ -179,6 +196,9 @@ Uso interno / educativo. Adaptar según necesidad.
 
 ## 🙌 Autor
 
-Desarrollado para optimizar el proceso de asistencia en SIU Guaraní.
+Desarrollado para optimizar el proceso de asistencia en SIU Guaraní por: 
+- [Mauricio Pintos](https://github.com/mauriciopintos)
+- [Matias Müller](https://github.com/matiashmuller)
+- [Hernán Coniglio](https://github.com/hernanconiglio)
 
 ---
