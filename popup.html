@@ -1,7 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="popup.js"></script>
+  <link rel="stylesheet" href="popup.css"> <!-- [NUEVO] -->
+  <script src="popup.js" defer></script>
 </head>
-<body style="width:0; height:0;"></body>
+
+<body>
+
+  <h3>Asistencia</h3>
+
+  <button class="btn-main" id="abrirPanel">
+    Cargar asistencias
+  </button>
+
+  <hr />
+
+  <h3>Google Forms</h3>
+
+  <input id="descripcion" placeholder="Ej: Clase sabado 25/4" />
+
+  <label>Inicio:</label>
+  <input type="datetime-local" id="inicio" />
+
+  <label>Fin:</label>
+  <input type="datetime-local" id="fin" />
+
+  <button class="btn-main" id="crearForm">
+    Crear formulario
+  </button>
+
+  <div id="resultado"></div>
+
+</body>
 </html>

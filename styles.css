@@ -7,7 +7,7 @@
   color: white;
   padding: 15px;
   border-radius: 12px;
-  z-index: 999999;
+  z-index: 9999;
   font-family: Arial, sans-serif;
   box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
@@ -90,4 +90,10 @@
   font-size: 12px;
   margin-top: 8px;
   opacity: 0.8;
+}
+
+/* [NUEVO] asegurar tamaño en popup */
+body {
+  min-width: 300px;
+  min-height: 400px;
 }

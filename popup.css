@@ -1,0 +1,48 @@
+/* ===== POPUP STYLES (NUEVO) ===== */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #1e1e2f;
+  color: white;
+  width: 320px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+/* títulos */
+h3 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+/* inputs */
+input {
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* botones */
+button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* botón principal */
+.btn-main {
+  background: #00c853;
+  color: white;
+}
+
+/* resultado */
+#resultado {
+  margin-top: 10px;
+  font-size: 13px;
+}

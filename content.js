@@ -7,6 +7,7 @@
 
   container = document.createElement("div");
   container.id = "asistencia-pro-container";
+  container.style.zIndex = "9999"; // [NUEVO]
   document.body.appendChild(container);
 
   const shadow = container.attachShadow({ mode: "open" });
