@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="popup.css"> <!-- [NUEVO] -->
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
   <script src="popup.js" defer></script>
 </head>
-
 <body>
-
   <h3>Asistencia</h3>
 
   <button class="btn-main" id="abrirPanel">
@@ -19,17 +18,16 @@
 
   <input id="descripcion" placeholder="Ej: Clase sabado 25/4" />
 
-  <label>Inicio:</label>
-  <input type="datetime-local" id="inicio" />
-
-  <label>Fin:</label>
+  <label>Hora de cierre:</label>
   <input type="datetime-local" id="fin" />
 
-  <button class="btn-main" id="crearForm">
-    Crear formulario
-  </button>
+  <div id="botonesForm">
+    <button class="btn-main" id="crearForm">Crear formulario</button>
+  </div>
 
+  <div id="countdown"></div>
   <div id="resultado"></div>
+
   <button id="limpiarForm" class="btn-clear" style="margin-top:5px;">
     Limpiar
   </button>

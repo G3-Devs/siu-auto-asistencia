@@ -1,7 +1,5 @@
-/* ===== POPUP STYLES (NUEVO) ===== */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -9,26 +7,25 @@ body {
   color: white;
   width: 320px;
   padding: 12px;
-  box-sizing: border-box;
 }
 
-/* títulos */
-h3 {
-  margin-top: 0;
-  font-size: 16px;
+h3 { margin-top: 0; font-size: 16px; }
+
+label {
+  font-size: 12px;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 2px;
 }
 
-/* inputs */
 input {
-  width: 98%;
+  width: 100%;
   margin-bottom: 6px;
   padding: 6px;
   border-radius: 6px;
   border: none;
-  box-sizing: border-box; /* 🔥 CLAVE */
 }
 
-/* botones */
 button {
   width: 100%;
   padding: 8px;
@@ -36,21 +33,36 @@ button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-}
-
-/* botón principal */
-.btn-main {
-  background: #00c853;
-  color: white;
-}
-
-/* resultado */
-#resultado {
-  margin-top: 10px;
   font-size: 13px;
 }
 
-.btn-clear {
-  background: #d32f2f;
-  color: white;
+.btn-main  { background: #00c853; color: white; }
+.btn-clear { background: #d32f2f; color: white; }
+.btn-danger { background: #d32f2f; color: white; }
+.btn-secondary { background: #3949ab; color: white; }
+
+.btn-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
 }
+.btn-row button {
+  margin-top: 0;
+  flex: 1;
+}
+
+#countdown {
+  margin-top: 8px;
+  font-size: 13px;
+  text-align: center;
+  font-weight: bold;
+  min-height: 20px;
+}
+
+#countdown.urgente { color: #ff5252; }
+#countdown.normal  { color: #00c853; }
+#countdown.warning { color: #ffd740; }
+
+#resultado { margin-top: 10px; font-size: 13px; }
+
+hr { border-color: #ffffff22; margin: 10px 0; }

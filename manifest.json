@@ -1,17 +1,25 @@
 {
   "manifest_version": 3,
-  "name": "SIU Asistencia + Form al Toque",
-  "version": "4.5.0",
+  "name": "Asistencia SIU + Form al Toque",
+  "version": "4.5.6",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0gIQOPWBgIoN9f1Byzw8XhxhERlB1VNsodzU8XDgY6a52LwbUV3WCZLYJNiHGvhQffL8gMNkWR/hjLny+64YVbTRWLCmSjFobhbI8SNDmBR3XERPXXXKbNdLgC9qqzeqx9rrexvIHn6VJWydqReIihq6Z891v/49sg3gz5aPtQNEJBB4uPeVa0ooFqZnrJpJDQxzIumBh5sWLpj8MxcDLvU3yI/m169FAtSP5lou5ujvnj8A/6aF9th7LWy6fMU6laCeonJUhS27gSyunV2uLbhPgvvaHxL0ZRsUp0BdF1W9Tt2qqglldtpIG0KiU8N+NEu/ZujzRGvZdZXs07ANrwIDAQAB",
   "description": "Formulario asistencia y marcado automático de asistencia",
-  "permissions": [
-    "storage",
-    "scripting",
-    "activeTab"
+  "permissions": ["identity", "storage", "scripting", "activeTab"],
+  "host_permissions": [
+    "https://forms.googleapis.com/*",
+    "https://www.googleapis.com/*"
   ],
+  "oauth2": {
+    "client_id": "447770917718-fgljsubje8ng5ptqsar5uknd3kif884t.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/forms.body",
+      "https://www.googleapis.com/auth/drive"
+    ]
+  },
   "icons": {
-  "16": "icons/icon16.png",
-  "48": "icons/icon48.png",
-  "128": "icons/icon128.png"
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
   },
   "action": {
     "default_title": "Abrir Asistencia",
@@ -24,12 +32,8 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
-      "css": [
-        "styles.css"
-      ]
+      "matches": ["<all_urls>"],
+      "css": ["styles.css"]
     }
   ],
   "browser_specific_settings": {
@@ -42,7 +46,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["styles.css"],
+      "resources": ["styles.css", "content.js"],
       "matches": ["<all_urls>"]
     }
   ]
